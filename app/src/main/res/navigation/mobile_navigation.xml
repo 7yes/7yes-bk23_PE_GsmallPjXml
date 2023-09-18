@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.jess.gsmallpjxml.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_extraFragment"
+            app:destination="@id/extraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/extraFragment"
+        android:name="com.jess.gsmallpjxml.ui.extra.ExtraFragment"
+        android:label="fragment_extra"
+        tools:layout="@layout/fragment_extra" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.jess.gsmallpjxml.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.jess.gsmallpjxml.R
 import com.jess.gsmallpjxml.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +20,7 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDetailBinding.inflate(layoutInflater, container, false)
-
+        binding.tvDetail.setOnClickListener { findNavController().navigate(R.id.action_detailFragment_to_extraFragment) }
         return binding.root
     }
 

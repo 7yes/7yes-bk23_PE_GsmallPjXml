@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.jess.gsmallpjxml.R
 import com.jess.gsmallpjxml.databinding.FragmentExtraBinding
 import com.jess.gsmallpjxml.databinding.FragmentHomeBinding
@@ -20,7 +21,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-
+        binding.tvHome.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_detailFragment) }
         return binding.root
     }
 
