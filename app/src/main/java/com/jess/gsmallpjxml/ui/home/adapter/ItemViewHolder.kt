@@ -8,9 +8,10 @@ import com.jess.gsmallpjxml.domain.model.MyItem
 
 class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = ItemSmallBinding.bind(view)
-    fun render(item: MyItem) {
+    fun render(item: MyItem, onClickListener: (MyItem) -> Unit) {
         binding.tvTitle.text = item.name
         binding.imPhoto.load(item.photo)
         binding.tvDescription.text = item.description
+        itemView.setOnClickListener { onClickListener(item) }
     }
 }
