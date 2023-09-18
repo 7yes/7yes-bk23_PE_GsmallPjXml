@@ -8,7 +8,7 @@ class Repository @Inject constructor(private val api: ApiService) {
     suspend fun getMyItems(): List<MyItem> {
        val call = api.getAll()
         if (call.isSuccessful) {
-            return call.body()?.map { it.toDomain() } ?: emptyList()
+           return   call.body()?.map { it.toDomain() } ?: emptyList()
         }
         return emptyList()
     }
