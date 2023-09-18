@@ -13,6 +13,12 @@
         <argument
             android:name="name"
             app:argType="string" />
+        <argument
+            android:name="photo"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/extraFragment"

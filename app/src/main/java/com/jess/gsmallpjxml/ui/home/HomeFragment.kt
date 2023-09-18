@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
     }
     private fun initRV() {
         adapter = ItemAdapter(lista){
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it.name))
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it.name,it.photo,it.description))
         }
         binding.rvHome.layoutManager = LinearLayoutManager(requireContext())
         binding.rvHome.adapter = adapter
