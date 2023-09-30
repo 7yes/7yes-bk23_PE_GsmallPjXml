@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.jess.gsmallpjxml.R
 import com.jess.gsmallpjxml.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
+    val args:DetailFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -23,6 +25,10 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.go.text = args.mname
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
