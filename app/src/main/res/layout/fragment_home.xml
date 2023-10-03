@@ -1,15 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/go"
         android:gravity="center"
+        style="@style/mStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideTop"
         android:text="@string/home" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <TextView
+        android:id="@+id/tv_livedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintVertical_bias="0.1"
+        android:text="Hello World"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_flow"
+        app:layout_constraintEnd_toStartOf="@id/btn_livedata"
+        app:layout_constraintTop_toBottomOf="@id/guideTop"/>
+
+    <Button
+        android:id="@+id/btn_livedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_livedata"
+        app:layout_constraintEnd_toStartOf="@id/cb_livedata"
+        android:text="LiveData"/>
+
+    <CheckBox
+        android:id="@+id/cb_livedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_livedata"
+        app:layout_constraintEnd_toStartOf="@id/sb_livedata"/>
+
+    <TextView
+        android:id="@+id/sb_livedata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        android:text="SnackBar"
+        app:layout_constraintStart_toEndOf="@id/cb_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_livedata"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:text="Hello World"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_stateflow"
+        app:layout_constraintEnd_toStartOf="@id/btn_livedata"
+        app:layout_constraintTop_toBottomOf="@id/tv_livedata"/>
+
+    <Button
+        android:id="@+id/btn_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_flow"
+        app:layout_constraintEnd_toStartOf="@id/cb_livedata"
+        android:text="flow"/>
+
+    <CheckBox
+        android:id="@+id/cb_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_flow"
+        app:layout_constraintEnd_toStartOf="@id/sb_livedata"/>
+
+    <TextView
+        android:id="@+id/sb_flow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        android:text="SnackBar"
+        app:layout_constraintStart_toEndOf="@id/cb_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_flow"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_stateflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:text="Hello World"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_sharedflow"
+        app:layout_constraintEnd_toStartOf="@id/btn_livedata"
+        app:layout_constraintTop_toBottomOf="@id/tv_flow"/>
+
+    <Button
+        android:id="@+id/btn_stateflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_stateflow"
+        app:layout_constraintEnd_toStartOf="@id/cb_livedata"
+        android:text="stateflow"/>
+
+    <CheckBox
+        android:id="@+id/cb_stateflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_stateflow"
+        app:layout_constraintEnd_toStartOf="@id/sb_livedata"/>
+
+    <TextView
+        android:id="@+id/sb_stateflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        android:text="SnackBar"
+        app:layout_constraintStart_toEndOf="@id/cb_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_stateflow"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_sharedflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:text="Hello World"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideBottom"
+        app:layout_constraintEnd_toStartOf="@id/btn_livedata"
+        app:layout_constraintTop_toBottomOf="@id/tv_stateflow"/>
+
+    <Button
+        android:id="@+id/btn_sharedflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/tv_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_sharedflow"
+        app:layout_constraintEnd_toStartOf="@id/cb_livedata"
+        android:text="sharedflow"/>
+
+    <CheckBox
+        android:id="@+id/cb_sharedflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/btn_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_sharedflow"
+        app:layout_constraintEnd_toStartOf="@id/sb_livedata"/>
+
+    <TextView
+        android:id="@+id/sb_sharedflow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/mStyle"
+        android:text="SnackBar"
+        app:layout_constraintStart_toEndOf="@id/cb_livedata"
+        app:layout_constraintTop_toTopOf="@id/tv_sharedflow"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
