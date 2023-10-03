@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
 
         //flow
         binding.btnFlow.setOnClickListener {
-// no cabe SnackBar
+    // no cabe SnackBar
             lifecycleScope.launch {
                 viewmodel.triggerFlow().collectLatest {
                     binding.tvFlow.text = it
